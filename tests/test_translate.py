@@ -28,7 +28,7 @@ def test_translate():
     
     # Test with start and stop positions
     seq = "AAATGAAATAGTTT"
-    result = translate(seq, start=3, stop=12)  # Extract "ATGAAATAG"
+    result = translate(seq, start=2, stop=12)  # Extract "TGAAATAG"
     print(f"With start/stop: {seq}[3:12] -> {result}")
     assert result == "MK*", f"Expected 'MK*', got '{result}'"
     
