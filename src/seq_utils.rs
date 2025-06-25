@@ -2,8 +2,7 @@ use std::collections::HashMap;
 use pyo3::prelude::*;
 use needletail::parse_fastx_file;
 
-// Genetic code tables based on Seals2 by Yuri Wolf
-// Attribution: These genetic code definitions are adapted from Seals2 by Yuri Wolf
+// Genetic codes / variables sourced from Seals2 by Yuri Wolf (https://github.com/YuriWolf-ncbi/seals-2/blob/master/bin/misc/orf)
 // Original Perl implementation for comprehensive genetic code support
 
 /// Genetic code amino acid sequences (64 codons in order: TTT, TTC, TTA, TTG, TCT, TCC, TCA, TCG, TAT, TAC, TAA, TAG, TGT, TGC, TGA, TGG, CTT, CTC, CTA, CTG, CCT, CCC, CCA, CCG, CAT, CAC, CAA, CAG, CGT, CGC, CGA, CGG, ATT, ATC, ATA, ATG, ACT, ACC, ACA, ACG, AAT, AAC, AAA, AAG, AGT, AGC, AGA, AGG, GTT, GTC, GTA, GTG, GCT, GCC, GCA, GCG, GAT, GAC, GAA, GAG, GGT, GGC, GGA, GGG)

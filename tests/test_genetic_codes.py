@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Comprehensive test script for genetic code translation functionality
-Demonstrates the use of different genetic code tables from Seals2 by Yuri Wolf
+test script for genetic code translation functionality
+Demonstrates the use of different genetic code tables. Genetic codes sourced from Seals2 by Yuri Wolf (https://github.com/YuriWolf-ncbi/seals-2/blob/master/bin/misc/orf)
 """
 
 import sys
@@ -168,5 +168,4 @@ if __name__ == "__main__":
     test_codon_tables()
     test_basic_functionality()
     print("\n🧬 All genetic code tests passed! 🧬")
-    print("\nThis implementation includes genetic code tables from Seals2 by Yuri Wolf")
     print("Supporting translation for various organisms and organelles.") 
