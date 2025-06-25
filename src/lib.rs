@@ -3,6 +3,7 @@ mod operation;
 mod option;
 mod query;
 mod scan;
+mod seq_utils;
 mod streaming;
 mod udtf;
 mod utils;
@@ -21,6 +22,7 @@ use polars_lazy::prelude::{LazyFrame, ScanArgsAnonymous};
 use polars_python::error::PyPolarsErr;
 use polars_python::lazyframe::PyLazyFrame;
 use pyo3::prelude::*;
+use pyo3::Python;
 use tokio::runtime::Runtime;
 
 use crate::context::PyBioSessionContext;
@@ -430,6 +432,12 @@ fn polars_bio(_py: Python, m: &Bound<PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(py_describe_vcf, m)?)?;
     m.add_function(wrap_pyfunction!(py_register_view, m)?)?;
     m.add_function(wrap_pyfunction!(py_from_polars, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::translate, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::translate_file, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::reverse_complement_seq, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::count_nucleotides, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::gc_content, m)?)?;
+    m.add_function(wrap_pyfunction!(seq_utils::list_genetic_codes, m)?)?;
     m.add_class::<PyBioSessionContext>()?;
     m.add_class::<FilterOp>()?;
     m.add_class::<RangeOp>()?;

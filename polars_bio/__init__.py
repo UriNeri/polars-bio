@@ -3,6 +3,7 @@ from bioframe import count_overlaps
 from polars_bio.polars_bio import GffReadOptions, InputFormat
 from polars_bio.polars_bio import PyObjectStorageOptions as ObjectStorageOptions
 from polars_bio.polars_bio import ReadOptions, VcfReadOptions
+from polars_bio.polars_bio import translate, translate_file, reverse_complement_seq, count_nucleotides, gc_content, list_genetic_codes
 
 from .context import ctx, set_option
 from .sql import SQL
@@ -66,4 +67,10 @@ __all__ = [
     "ObjectStorageOptions",
     "set_option",
     "set_loglevel",
+    "translate",
+    "translate_file",
+    "reverse_complement_seq",
+    "count_nucleotides",
+    "gc_content",
+    "list_genetic_codes",
 ]

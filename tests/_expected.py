@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import mdpd
+import mdpd # type: ignore
 import pandas as pd
 import polars as pl
 

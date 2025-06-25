@@ -48,3 +48,15 @@ futures = "0.3.31"
 coitrees = "0.4.0"
 fnv = "1.0.7"
 rand = "0.8.5"
+needletail = { version = "0.6.3", default-features = false } # to avoid LZMA conflicts
+
+# Optimize build performance
+[profile.dev]
+debug = 1          # Reduce debug info
+incremental = true # Enable incremental compilation
+opt-level = 1      # Some optimization for dev builds
+
+[profile.release]
+debug = 1          # Keep some debug info 
+lto = "thin"       # Thin LTO for faster builds
+codegen-units = 16 # More parallelization
